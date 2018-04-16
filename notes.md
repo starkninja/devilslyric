@@ -12,11 +12,14 @@ User
  - balance
 
 Comment
+ - belongsto author
+ - belongsto transaction
  - author
  - content
- - post id
+ - transaction id
 
 Transaction
+ - belongs to user
  - to
  - from
  - amount
