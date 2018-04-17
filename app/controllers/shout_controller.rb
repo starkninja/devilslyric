@@ -1,2 +1,0 @@
-class ShoutController < ApplicationController
-end
