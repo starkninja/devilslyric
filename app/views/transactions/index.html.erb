@@ -1,0 +1,4 @@
+<% @transactions.each do |transaction| %>
+  <img src='<%= transaction.user.avatar_link %>'> <br />
+  <%= transaction.user.username %> paid <%= transaction.recipient.username %> <%= transaction.amount %> <br/ >
+<% end %>
