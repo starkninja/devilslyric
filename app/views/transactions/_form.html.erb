@@ -15,11 +15,14 @@
     <%= f.label :recipient_id %>
     <%= f.number_field :recipient_id %> <!-- replace with selector -->
     <br>
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %> <!-- eventually fetch this from session/logged in account -->
+    <br>
     <%= f.label :amount %><br>
     <%= f.number_field :amount %><br>
     <br>
     <%= f.label :note %><br>
-    <%= f.text_field %><br>
+    <%= f.text_field :note %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
