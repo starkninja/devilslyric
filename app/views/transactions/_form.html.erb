@@ -1,0 +1,27 @@
+<%= form_for(@transaction) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this coin from being sent:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recipient_id %>
+    <%= f.number_field :recipient_id %> <!-- replace with selector -->
+    <br>
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %><br>
+    <br>
+    <%= f.label :note %><br>
+    <%= f.text_field %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
