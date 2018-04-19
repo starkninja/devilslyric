@@ -28,3 +28,12 @@ Shout
   - author
   - content
   - recipient
+
+
+----
+
+  GOD PAID EVERYONE!!!!1!
+  (god account for distribution and creation of wealth)
+
+  Add ability to upload avatars
+  http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
