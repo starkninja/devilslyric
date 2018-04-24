@@ -1,0 +1,5 @@
+<% @users.each do |user| %> <!-- eventually break this out to a partial -->
+  <%= image_tag(user.avatar_link) %> <%= user.username %>
+<% end %>
+
+<%= render "application/navbar" %>
