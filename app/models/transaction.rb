@@ -19,7 +19,7 @@ class Transaction < ActiveRecord::Base
     if giver.balance >= self.amount
 
       giver.balance -= self.amount
-      receiver.balance += receiver.amount
+      receiver.balance += self.amount
       giver.save
       receiver.save
 
