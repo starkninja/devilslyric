@@ -31,6 +31,8 @@ class Transaction < ActiveRecord::Base
         #how best to send other errors?
         #http://api.rubyonrails.org/classes/ActiveModel/Errors.html
 
+    end
+
   end
 
 end
