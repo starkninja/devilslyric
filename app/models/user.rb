@@ -6,12 +6,12 @@ class User < ActiveRecord::Base
 
   after_initialize :set_defaults, unless: :persisted?
   after_initialize :create_initial_transaction, unless: :persisted?
-# The set_defaults will only work if the object is new
-
-  def set_defaults #give the new user some coins to get started
+  # # The set_defaults will only work if the object is new
+  #
+  def set_defaults #give the new user some coins to get started - should maybe just put this in the schema at some point but eh
     self.balance ||= 10
   end
-
+  #
   def create_initial_transaction #spoof the transaction to make the coins look like they were gifted by god
     initial_transaction = Transaction.new
     initial_transaction.recipient_id = self.id
