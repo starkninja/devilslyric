@@ -1,6 +1,7 @@
 class Transaction < ActiveRecord::Base
   belongs_to :user
   has_many :comments
+  validates :amount, :numericality => { :greater_than_or_equal_to => 0 }
 
   def recipient
     User.find(self.recipient_id)
