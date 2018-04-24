@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :shouts
 
   after_initialize :set_defaults, unless: :persisted?
-  after_initialize :create_initial_transaction, unless: :persisted?
+  after_create :create_initial_transaction
   # # The set_defaults will only work if the object is new
   #
   def set_defaults #give the new user some coins to get started - should maybe just put this in the schema at some point but eh

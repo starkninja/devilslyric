@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424064746) do
+ActiveRecord::Schema.define(version: 20180424095937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,11 @@ ActiveRecord::Schema.define(version: 20180424064746) do
     t.string   "email"
     t.string   "avatar_link"
     t.integer  "balance"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.text     "bio"
     t.integer  "unread"
+    t.boolean  "has_been_paid",   default: false
   end
 
 end
