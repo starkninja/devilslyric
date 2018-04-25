@@ -4,7 +4,7 @@ Activity:
   <% @transactions.each do |transaction| %>
     <hr>
     <%= transaction.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("at %I:%M%p on %m/%d/%Y") %><br />
-    <img src='<%= transaction.user.avatar_link %>'> <br />
+    <img src='<%= image_path(transaction.user.avatar_link) %>'> <br />
     <%= transaction.user.username %> paid <%= transaction.recipient.username %> <%= transaction.amount %> <br/ >
     "<%= transaction.note %>"<br />
     <hr>
