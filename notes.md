@@ -10,6 +10,7 @@
 
   Add ability to upload avatars
     http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
+    https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
 
     Then, if time, add this with jQuery
     https://github.com/rsantamaria/papercrop

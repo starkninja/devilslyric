@@ -13,7 +13,7 @@ body {
     font-size: 14pt;
 	line-height: 20pt;
 	font-family: 'Roboto', sans-serif;
-	letter-spacing: 1pt;
+	letter-spacing: 1pt;	
 	line-height: 32pt;
 }
 a {
@@ -26,7 +26,7 @@ hr {
 
 	height: 4px;
 	border: none;
-	background-color: #58585B;
+	background-color: #58585B;	
 	margin: 40px 0px;
 }
 img#logo {
@@ -39,7 +39,7 @@ div#head img#logo {
 div#head {
 	width:100%;
 	background-color: #404041;
-	height: 229px;
+	height: 229px;	
 }
 div#status {
 	background-color: #F05A28;
@@ -48,28 +48,36 @@ div#status {
 	font-size: 36pt;
 	font-family: 'Oswald', sans-serif;
     letter-spacing: 2.5px;
-	text-transform: uppercase;
-	display:flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+	text-transform: uppercase;	
+	display:flex;	
+	flex-direction: row;	
+	justify-content: space-between;			
+	align-items: center;		
 	height: 90px;
 }
 div.coin-count {
 	display: inline-flex;
-	flex-direction: row;
+	flex-direction: row;	
 	justify-content: flex-start;
 	align-items: center;
 	font-family: 'Oswald', sans-serif;
     letter-spacing: 2.5px;
-	text-transform: uppercase;
+	text-transform: uppercase;			
 }
 div.comment-count {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row;	
 	justify-content: flex-end;
-	align-items: flex-end;
+	align-items: flex-start;
 	margin-right: 40px;
+}
+div.comment-count a {
+	color: #F1EBD5;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25pt;
+	position: relative;
+	bottom: 6px;
+	font-weight: 300;
 }
 .full {
 	display:block;
@@ -78,7 +86,7 @@ div.comment-count {
 div#content {
 	display: block;
 	padding: 40px;
-	width: 100%;
+	width: 100%;	
 }
 div#content.hasfoot {
 	margin-bottom: 200px;
@@ -98,8 +106,8 @@ div#menu {
 }
 div#menu a {
 	color: #F1EBD5;
-	font-size: 24pt;
-	font-family: 'Oswald', sans-serif;
+	font-size: 22pt;
+	font-family: 'Oswald', sans-serif;		
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
 	text-decoration: none;
@@ -117,18 +125,18 @@ div#menu div.page {
 	margin-bottom:10px;
 }
 #menu .current {
-    background-color: #BE1E2D;
+    background-color: #BE1E2D;	
 }
 #profile {
-	font-family: 'Oswald', sans-serif;
-	display:flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+	font-family: 'Oswald', sans-serif;	
+	display:flex;	
+	flex-direction: column;	
+	justify-content: space-around;			
+	align-items: center;		
 	font-size: 40pt;
 	line-height: 60pt;
 	font-weight: 500;
-	text-align:center;
+	text-align:center;	
 }
 button {
 	text-transform: uppercase;
@@ -149,26 +157,26 @@ button {
 	width: 300px;
 }
 input {
-	background-color: #A7A9AB;
+	background-color: #A7A9AB;	
 	font-size: 39pt;
 	color:#BE1E2D;
 	border: 3px #2D2D2D solid;
-	border-radius: 2px;
-	font-family: 'Oswald', sans-serif;
+	border-radius: 8px;
+	font-family: 'Oswald', sans-serif;	
 	padding: 10px 15px;
 	margin: 15px 0px;
 }
 textarea {
 	width: 100%;
 	height: 400px;
-	background-color: #A7A9AB;
+	background-color: #A7A9AB;	
 	font-size: 22pt;
 	font-family: inherit;
-	color:#000000;
+	color:#BE1E2D;
 	border: 3px #2D2D2D solid;
-	border-radius: 2px;
+	border-radius: 8px;
 	padding: 10px 15px;
-	margin: 15px 0px;
+	margin: 15px 0px;	
 }
 textarea.comment {
 	height: 200px;
@@ -185,6 +193,9 @@ textarea.comment {
 	width: 225px;
 	height: 225px;
 }
+.avatar, .lil-avatar, .med-avatar {
+	border-radius: 150px;
+}
 .i {
     font-style: italic;
 }
@@ -193,7 +204,7 @@ textarea.comment {
 	display:block;
 }
 .slogan {
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Oswald', sans-serif;	
     font-size: 14pt;
 	text-transform:uppercase;
 	letter-spacing: 3px;
@@ -210,18 +221,18 @@ h5 {
 	font-weight: 500;
 	font-size: 38pt;
 	text-transform:uppercase;
-	letter-spacing: 4px;
-	font-family: 'Oswald', sans-serif;
+	letter-spacing: 4px;	
+	font-family: 'Oswald', sans-serif;		
 }
 h4 {
 	margin-bottom: 10px;
-	margin-top: 0px;
+	margin-top: 0px;	
 	padding: 10px 0px;
 	font-weight: 400;
 	font-size: 19pt;
 	text-transform:uppercase;
-	letter-spacing: 4px;
-	font-family: 'Oswald', sans-serif;
+	letter-spacing: 4px;	
+	font-family: 'Oswald', sans-serif;		
 }
 table tr td th {
 	border: none;
@@ -240,41 +251,54 @@ th.form-title {
 }
 div#user-edit-top {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: flex-end;
+	flex-direction: row;	
+	justify-content: space-around;			
+	align-items: flex-end;			
 }
 div.activity, div.friend, div.comment {
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
+	flex-direction: row;	
+	justify-content: flex-start;			
+	align-items: flex-start;			
 }
-div.activity, div.friend, div.comment, div.transaction {
+div.activity, div.friend, div.comment, div.transaction {			
 	font-size: 30pt;
 	line-height: 40pt;
 }
 div.activity-head, div.friend-head, div.comment-head {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: row;	
 	justify-content: flex-start;
+	align-items: center;			
+}
+div.send-friend {
 	align-items: center;
+}
+div.send-friend a {
+	font-size: 36pt;
+}
+div.send-friend div.big-arrow {
+	display: inline;
+	font-size: 40pt;
+}
+div.send-friend div.friend-head {
+	justify-content: space-between;
 }
 div.transaction-head {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: row;	
 	justify-content: center;
-	align-items: center;
+	align-items: center;		
 	text-align: center;
 }
 div.transaction-comment {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: row;	
 	justify-content: center;
-	align-items: center;
+	align-items: center;		
 	text-align: center;
 }
 div.activity img.lil-avatar, div.friend img.lil-avatar, div.comment img.lil-avatar {
@@ -312,57 +336,41 @@ div.big-arrow {
 	font-size: 60pt;
 	margin: 12px 60px;
 }
+div.big-arrow a {
+	font-size: inherit;
+	color: #F1EBD5;
+}
 .fuckthisprojectentirely {
 	font-size: 16pt;
 }
-.avatar, .lil-avatar, .med-avatar {
-	border-radius: 150px;
+input:focus, textarea:focus {
+	background-color: #CCCCCC;
 }
-div.comment-count a {
-	color: #F1EBD5;
-	font-family: 'Roboto', sans-serif;
-	font-size: 25pt;
-	position: relative;
-	bottom: 6px;
-	font-weight: 300;
+input:focus ~ div#menu {
+	display: none
+}
+input.coins {
+	width: 200px;
+	height: 100px;
+	background-image: url("../images/coin.png");	
+    background-position: 10px 10px; 
+	background-size: 75px;
+    background-repeat: no-repeat;
+    padding-left: 100px;
 }
 
-div.comment-count a {
-	color: #F1EBD5;
-	font-family: 'Roboto', sans-serif;
-	font-size: 25pt;
-	position: relative;
-	bottom: 6px;
-	font-weight: 300;
-}
 
 @media (min-width: 1200px) {
 
 * {
 	font-size: 12pt;
-	line-height: 20pt;div#menu {
-	font-size: 12pt;
-	font-family: 'Oswald', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	height: 100%;
-	width:120px;
-	position:fixed;
-	bottom:0px;
-	padding: 0px;
-	padding-top: 0px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	border-right: 3px #2D2D2D solid;
-	z-index: 200;
-}
+	line-height: 20pt;
 	letter-spacing: auto;
-}
+}	
 div#content {
-	width: 60%;
+	width: 60%;	
 	margin: 0 auto;
-}
+}	
 div#status {
 	font-size: 15pt;
 	height:auto;
@@ -379,7 +387,7 @@ div#content{
 div#head {
 	padding-left: 120px;
 	position: sticky;
-	top: 0px;
+	top: 0px;	
 	z-index: 100;
 	height: auto;
 }
@@ -389,26 +397,21 @@ div#head img#logo {
 	margin: 15px;
 }
 div#menu {
-	background-color: #F05A28;
-	height: 130px;
-	width:100%;
+	font-size: 12pt;
+	font-family: 'Oswald', sans-serif;		
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	height: 100%;
+	width:120px;
 	position:fixed;
 	bottom:0px;
-	padding: 10px;
+	padding: 0px;
 	padding-top: 0px;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-}
-div#menu a {
-	color: #F1EBD5;
-	font-size: 24pt;
-	font-family: 'Oswald', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	text-decoration: none;
-	font-weight: 300;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-right: 3px #2D2D2D solid;
+	z-index: 200;
 }
 div#menu div.page {
 	display: inline-block;
@@ -456,40 +459,11 @@ div#alert {
 }
 div.alert-on {
 	position:relative;
-	left:0px;.avatar, .lil-avatar, .med-avatar {
-	border-radius: 150px;
-}
-div.comment-count a {
-	color: #F1EBD5;
-	font-family: 'Roboto', sans-serif;
-	font-size: 25pt;
-	position: relative;
-	bottom: 6px;
-	font-weight: 300;
-}
+	left:0px;
 	top:-40px;
 }
 div.big-arrow {
 	font-size: 60pt;
 	margin: 12px 60px;
-}
-.avatar, .lil-avatar, .med-avatar {
-	border-radius: 150px;
-}
-div.comment-count a {
-	color: #F1EBD5;
-	font-family: 'Roboto', sans-serif;
-	font-size: 25pt;
-	position: relative;
-	bottom: 6px;
-	font-weight: 300;
-}
-div.comment-count a {
-	color: #F1EBD5;
-	font-family: 'Roboto', sans-serif;
-	font-size: 25pt;
-	position: relative;
-	bottom: 6px;
-	font-weight: 300;
 }
 }
