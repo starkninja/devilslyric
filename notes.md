@@ -4,6 +4,10 @@
 
   Add user accounts/authentication/sign-in once finished with Flatiron labs
 
+  Active navbar icons - https://gist.github.com/mynameispj/5692162
+
+  Styling
+
   Add friend picker for sending coins
 
   The entire comment controller and views need to be done still
@@ -20,7 +24,7 @@
   https://gist.github.com/mynameispj/5692162
 
   1.1 wishlist
-      Password recovery?
+      Password recovery? - https://www.railstutorial.org/book/password_reset
       Shoutbox/shouts on profile
       Attack protection/sanitization
 
