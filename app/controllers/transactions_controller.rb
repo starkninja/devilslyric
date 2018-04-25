@@ -5,8 +5,16 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = Transaction.new
+    @users = User.all
   end
+
+  # def send(params)
+  #   # if params[:recipient_id]
+  #   #   @recipient = User.find(params[:recipient_id])
+  #   # else
+  #   #   @recipient = nil
+  #   # end
+  # end
 
   def create
     #NEED CHECK IF BALANCE TOO LOW
@@ -17,12 +25,7 @@ class TransactionsController < ApplicationController
         #DRY up this logic
         #it should either be moved to the model or at least its own method. doesn't belong in controller
         #maybe something like @transaction.pay
-        user = @transaction.user
-        recipient = @transaction.recipient
-        user.balance = user.balance - @transaction.amount
-        user.save
-        recipient.balance = recipient.balance + @transaction.amount
-        recipient.save
+        @transaction.pay
         format.html { redirect_to(transactions_url) }
         format.json { render action: 'index', status: :created }
         # redirect_to 'index'

@@ -1,1 +1,9 @@
 <h2>Send Bonecoin!</h2>
+
+<% if @users.length > 0 %>
+  <% @users.each do |user| %>
+    <%= link_to image_tag(user.avatar_link), new_transaction_url, :recipient_id => user.id %> <%= link_to user.username, new_transaction_url, :recipient_id => user.id %> <br />
+  <% end %>
+<% else %>
+  No friends! That's no fun!
+<% end %>

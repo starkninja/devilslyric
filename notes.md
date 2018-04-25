@@ -23,3 +23,5 @@
       Password recovery?
       Shoutbox/shouts on profile
       Attack protection/sanitization
+
+<%= link_to image_tag(user.avatar_link), send_transactions_url, :recipient_id => user.id %> <%= link_to user.username, send_transactions_url. :recipient_id => user.id %> <br />
