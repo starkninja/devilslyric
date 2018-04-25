@@ -21,3 +21,4 @@
   1.1 wishlist
       Password recovery?
       Shoutbox/shouts on profile
+      Attack protection/sanitization

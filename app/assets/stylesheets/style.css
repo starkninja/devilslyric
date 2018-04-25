@@ -327,6 +327,15 @@ div.comment-count a {
 	font-weight: 300;
 }
 
+div.comment-count a {
+	color: #F1EBD5;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25pt;
+	position: relative;
+	bottom: 6px;
+	font-weight: 300;
+}
+
 @media (min-width: 1200px) {
 
 * {
@@ -466,6 +475,14 @@ div.big-arrow {
 }
 .avatar, .lil-avatar, .med-avatar {
 	border-radius: 150px;
+}
+div.comment-count a {
+	color: #F1EBD5;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25pt;
+	position: relative;
+	bottom: 6px;
+	font-weight: 300;
 }
 div.comment-count a {
 	color: #F1EBD5;
