@@ -7,6 +7,7 @@
   Styling
 
   Add friend picker for sending coins - do we need to use a form an make each one a button maybe?
+  - NO - each user listing its own form, with only a submit button, and a hidden field including the user id! It's *genius*!!
 
   The entire comment controller and views need to be done still
 
@@ -22,6 +23,7 @@
       Password recovery? - https://www.railstutorial.org/book/password_reset
       Shoutbox/shouts on profile
       Attack protection/sanitization
+      Omnniauth for Facebook/google authentication
 
 
 

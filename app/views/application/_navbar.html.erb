@@ -5,7 +5,7 @@
 
 <div id="menu">
 
-  <% if current_page?(transactions_path) %>
+  <% if current_page?(transactions_path) || current_page?(root_path) %>
     <div class="current page">
       <div id="alert"><%= link_to "26", transactions_path %></div>
       <div class="alert-on">
@@ -23,15 +23,15 @@
     </div>
   <% end %>
 
-  <% if current_page?(root_path) %>
+  <% if current_page?(user_path(User.find(1))) %>
     <div class="current page">
-      <%= link_to image_tag("profile-on.png"), root_path %><br />
-      <%= link_to "Profile", root_path %>
+      <%= link_to image_tag("profile-on.png"), user_path(User.find(1)) %><br />
+      <%= link_to "Profile", user_path(User.find(1)) %>
     </div>
   <% else %>
     <div class="page">
-      <%= link_to image_tag("profile-off.png"), root_path %><br />
-      <%= link_to "Profile", root_path %>
+      <%= link_to image_tag("profile-off.png"), user_path(User.find(1)) %><br />
+      <%= link_to "Profile", user_path(User.find(1)) %>
     </div>
   <% end %>
 
