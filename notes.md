@@ -2,8 +2,6 @@
 
 ----
 
-  Add user accounts/authentication/sign-in once finished with Flatiron labs
-
   Styling
 
   Add friend picker for sending coins - do we need to use a form an make each one a button maybe?
@@ -30,3 +28,4 @@
 DONE
 ----
   Active navbar icons - https://gist.github.com/mynameispj/5692162
+  Add user accounts/authentication/sign-in once finished with Flatiron labs
