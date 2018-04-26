@@ -8,7 +8,7 @@
 
   Styling
 
-  Add friend picker for sending coins
+  Add friend picker for sending coins - do we need to use a form an make each one a button maybe?
 
   The entire comment controller and views need to be done still
 

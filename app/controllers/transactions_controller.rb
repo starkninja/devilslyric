@@ -5,16 +5,12 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @users = User.all
+    @user = User.find(params[:recipient_id])
   end
 
-  # def send(params)
-  #   # if params[:recipient_id]
-  #   #   @recipient = User.find(params[:recipient_id])
-  #   # else
-  #   #   @recipient = nil
-  #   # end
-  # end
+  def pick_friend
+    @users = User.all
+  end
 
   def create
     #NEED CHECK IF BALANCE TOO LOW
