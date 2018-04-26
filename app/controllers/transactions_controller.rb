@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :require_logged_in
 
   def index
     #eventually clear the logged-in user's notifications here
@@ -6,7 +7,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:recipient_id])
+    @recipient = User.find(params[:recipient_id])
   end
 
   def pick_friend

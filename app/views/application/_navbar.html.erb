@@ -23,15 +23,15 @@
     </div>
   <% end %>
 
-  <% if current_page?(user_path(User.find(1))) %>
+  <% if current_page?(user_path(@user)) %>
     <div class="current page">
-      <%= link_to image_tag("profile-on.png"), user_path(User.find(1)) %><br />
-      <%= link_to "Profile", user_path(User.find(1)) %>
+      <%= link_to image_tag("profile-on.png"), user_path(@user) %><br />
+      <%= link_to "Profile", user_path(@user) %>
     </div>
   <% else %>
     <div class="page">
-      <%= link_to image_tag("profile-off.png"), user_path(User.find(1)) %><br />
-      <%= link_to "Profile", user_path(User.find(1)) %>
+      <%= link_to image_tag("profile-off.png"), user_path(@user) %><br />
+      <%= link_to "Profile", user_path(@user) %>
     </div>
   <% end %>
 
