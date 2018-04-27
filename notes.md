@@ -2,13 +2,15 @@
 
 ----
 
-  Styling
-
   Add friend picker for sending coins - do we need to use a form an make each one a button maybe?
   - NO - each user listing its own form, with only a submit button, and a hidden field including the user id! It's *genius*!!
   - they can work just like the 'logout' button
 
   The entire comment controller and views need to be done still
+
+  Styling
+
+  notifications
 
   Add ability to upload avatars
     http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip

@@ -7,7 +7,7 @@
 
   <% if current_page?(transactions_path) || current_page?(root_path) %>
     <div class="current page">
-      <div id="alert"><%= link_to "26", transactions_path %></div>
+      <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
       <div class="alert-on">
         <%= link_to image_tag("activity-on.png"), transactions_path %><br />
           <%= link_to "Activity", transactions_url %>
@@ -15,7 +15,7 @@
     </div>
   <% else %>
     <div class="page">
-      <div id="alert"><%= link_to "26", transactions_path %></div>
+      <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
       <div class="alert-on">
         <%= link_to image_tag("activity-off.png"), transactions_path %><br />
           <%= link_to "Activity", transactions_url %>
