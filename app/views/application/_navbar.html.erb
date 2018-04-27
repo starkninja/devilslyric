@@ -4,25 +4,42 @@
       Friends --->
 
 <div id="menu">
+<!-- Activity button -->
+  <% if @user.unread > 0 %>
+    <% if current_page?(transactions_path) || current_page?(root_path) %>
+      <div class="current page">
+        <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
+        <div class="alert-on">
+          <%= link_to image_tag("activity-on.png"), transactions_path %><br />
+            <%= link_to "Activity", transactions_url %>
+        </div>
+      </div>
+    <% else %>
+      <div class="page">
+        <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
+        <div class="alert-on">
+          <%= link_to image_tag("activity-off.png"), transactions_path %><br />
+            <%= link_to "Activity", transactions_url %>
+        </div>
+      </div>
+    <% end %>
 
-  <% if current_page?(transactions_path) || current_page?(root_path) %>
-    <div class="current page">
-      <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
-      <div class="alert-on">
-        <%= link_to image_tag("activity-on.png"), transactions_path %><br />
-          <%= link_to "Activity", transactions_url %>
-      </div>
-    </div>
   <% else %>
-    <div class="page">
-      <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
-      <div class="alert-on">
-        <%= link_to image_tag("activity-off.png"), transactions_path %><br />
+    <% if current_page?(transactions_path) || current_page?(root_path) %>
+      <div class="current page">
+          <%= link_to image_tag("activity-on.png"), transactions_path %><br />
           <%= link_to "Activity", transactions_url %>
       </div>
-    </div>
+    <% else %>
+      <div class="page">
+        <%= link_to image_tag("activity-off.png"), transactions_path %><br />
+        <%= link_to "Activity", transactions_url %>
+      </div>
+    <% end %>
+
   <% end %>
 
+<!-- Profile button -->
   <% if current_page?(user_path(@user)) %>
     <div class="current page">
       <%= link_to image_tag("profile-on.png"), user_path(@user) %><br />
@@ -35,6 +52,7 @@
     </div>
   <% end %>
 
+<!--Send Coin button -->
   <% if current_page?(pick_friend_transactions_path) %>
     <div class="current page">
       <%= link_to image_tag("send-on.png"), pick_friend_transactions_url %><br />
@@ -47,6 +65,7 @@
     </div>
   <% end %>
 
+<!-- Firends button -->
   <% if current_page?(users_path) %>
     <div class=" current page">
       <%= link_to image_tag("friends-on.png"), users_url %><br />
