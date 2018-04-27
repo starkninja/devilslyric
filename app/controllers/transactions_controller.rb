@@ -4,6 +4,8 @@ class TransactionsController < ApplicationController
   def index
     #eventually clear the logged-in user's notifications here
     @transactions = Transaction.all.order('created_at DESC')
+    @user.unread = 0
+    @user.save
   end
 
   def new
