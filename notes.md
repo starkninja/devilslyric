@@ -10,8 +10,6 @@
 
   The entire comment controller and views need to be done still
 
-  Error message for authentiation failure (just use a flash message?)
-
   Add ability to upload avatars
     http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
     https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
@@ -25,6 +23,7 @@
       Shoutbox/shouts on profile
       Attack protection/sanitization
       Omnniauth for Facebook/google authentication
+      style flash errors
 
 
 

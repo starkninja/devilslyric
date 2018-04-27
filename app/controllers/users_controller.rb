@@ -17,9 +17,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    return redirect_to controller: 'users', action: 'new' unless @user.save
-    session[:user_id] = @user.id
-    redirect_to controller: 'transactions', action: 'index'
+    # return redirect_to controller: 'users', action: 'new' unless @user.save
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to controller: 'transactions', action: 'index'
+    else
+      flash[:error] = "Something went wrong. Please try again."
+      redirect_to controller: 'users', action: 'new'
+    end
   end
 
   def edit

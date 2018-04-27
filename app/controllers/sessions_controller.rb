@@ -8,7 +8,12 @@ class SessionsController < ApplicationController
 
     user = user.try(:authenticate, params[:user][:password])
 
-    return redirect_to(controller: 'sessions', action: 'new') unless user
+    # return redirect_to(controller: 'sessions', action: 'new') unless user
+
+    if !user
+      flash[:error] = "Wrong username or password. Please try again."
+      return redirect_to(controller: 'sessions', action: 'new')
+    end
 
     session[:user_id] = user.id
 
