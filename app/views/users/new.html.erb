@@ -5,11 +5,19 @@
 
 <p class="slogan">Bonecoin takes over when money fails™</p>
 
-<p class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit nulla ipsum. Mauris congue, enim et aliquam aliquet, odio ex fringilla lorem, et interdum felis tellus consectetur elit. Proin facilisis tellus id quam venenatis, at blandit ante placerat. Maecenas in vulputate libero. Pellentesque scelerisque dignissim purus vel hendrerit. Pellentesque sit amet tortor tellus.
-<br /><br />
+<p class="copy">Tired of sullying your paws with filthy Real Human Currency?<br />
+Bonecoin is clean, Real Digital Currency, backed by nothing! Just like real currency, but without the germs!<br /><br />
+
+Uninterested in supporting cryptocurrencies made by Silicon Valley Bros and Internet Trolls?<br />
+Bonecoin is made by friends, for friends!<br /><br />
+
+It's easy to get started! Just click "" below!<br /><br />
+
+DO IT.</p>
+<br />
 
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
-<table class="center">
+<table class="center login">
 <tr>
 <th class="form-title" colspan="2"><h5>Sign Up</h5></th>
 </tr>
@@ -23,17 +31,18 @@
 <td class="form-labels"><%= f.label :password_confirmation %></td><td align="right"><%= f.password_field :password_confirmation %></td>
 </tr>
 <tr>
-<td class="form-labels"></td><td align="right"><%= f.button "Sign Up" %> <br />
-  or <%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %></td>
+<td class="form-labels"></td><td align="right"><%= f.button "Sign Up" %> </td>
+</tr>
+<tr>
+<td class="form-labels" colspan="2" align="right">or <%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %></td>
 </tr>
 </table>
 <% end %>
 <br />
 <% if flash[:error] %>
     <div class="notice">
-      <%= image_tag("skull.png") %>
+      <%= image_tag("skull.png", class: "notice") %>
       <div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
-      <%= flash[:error] %>
   </div>
 <% end %>
 <br />

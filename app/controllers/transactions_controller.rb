@@ -27,6 +27,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @section_title = "Comments"
     @transaction = Transaction.find(params[:id])
     @comments = @transaction.comments
 

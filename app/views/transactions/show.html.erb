@@ -2,23 +2,23 @@
 	<div class="transaction-head">
 
   <% if @transaction.user.avatar.present? %>
-    <div><%= link_to image_tag(@transaction.user.avatar.url(:large), class: "med-avatar"), @transaction.user %><%= link_to @transaction.user.username, @transaction.user %></div>
+    <div><%= link_to image_tag(@transaction.user.avatar.url(:large), class: "med-avatar"), @transaction.user %><br /><%= link_to @transaction.user.username, @transaction.user %></div>
   <% else %>
-    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.user %><%= link_to @transaction.user.username, @transaction.user %></div>
+    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.user %><br /><%= link_to @transaction.user.username, @transaction.user %></div>
   <% end %>
       <div><br /><div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @transaction.amount.to_s %></div>&nbsp;<div class="big-arrow">►</div>&nbsp;</div>
 
   <% if @transaction.recipient.avatar.present? %>
-    <div><%= link_to image_tag(@transaction.recipient.avatar.url(:large), class: "med-avatar"), @transaction.recipient %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+    <div><%= link_to image_tag(@transaction.recipient.avatar.url(:large), class: "med-avatar"), @transaction.recipient %><br /><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
   <% else %>
-    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.recipient %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.recipient %><br /><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
   <% end %>
 
   </div>
     <br />
-  <div class="fuckthisprojectentirely">
+  <!-- <div class="fuckthisprojectentirely"> -->
     <%= image_tag("comment.png", class: "comment") %>&nbsp;<%= link_to @transaction.user.username, @transaction.user %>:&nbsp;"<%= sanitize @transaction.note %>"
-  </div>
+  <!-- </div> -->
 </div>
 
 <br /><br />
@@ -34,8 +34,11 @@
   <center><%= f.button "Send" %></center>
 <% end %>
 
-<% if flash[:comment_error] %>
-    <div class="notice"><%= flash[:comment_error] %></div>
+<% if flash[:comment_error] %> <!-- DRY this -->
+	<div class="notice">
+		<%= image_tag("skull.png", class: "notice") %>
+		<div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
+	</div>
 <% end %>
 <br /><br />
 

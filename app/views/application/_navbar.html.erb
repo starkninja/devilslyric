@@ -4,7 +4,7 @@
       Friends --->
       <div id="head">
       	<div id="head-box">
-      		<div id="logo"><%= image_tag("logo.png")%></div>
+      		<%= image_tag("logo.png", class: "logo")%>
             <div id="menu">
             <!-- Activity button -->
               <% if @user.unread > 0 %>
@@ -89,5 +89,3 @@
         </div>
 
         <div id="content" class="hasfoot">
-
-        <br /><br />

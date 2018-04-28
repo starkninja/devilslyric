@@ -8,7 +8,7 @@
   <div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @user_profile.balance.to_s %></div>
 </div>
 
-<p class="copy"><%= sanitize @user_profile.bio %></p>
+<div class="text"><%= sanitize @user_profile.bio %></div>
 <br />
 
 <% if @user == @user_profile %>
@@ -25,9 +25,8 @@
 <br /><br />
 <% if flash[:shout_error] %>
     <div class="notice">
-      <%= image_tag("skull.png") %>
+      <%= image_tag("skull.png", class: "notice") %>
       <div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
-      <%= flash[:shout_error] %>
   </div>
 <% end %>
 <h4>Leave a message</h4>
