@@ -1,3 +1,5 @@
+require 'pry'
+
 class UsersController < ApplicationController
   before_action :require_logged_in
   skip_before_action :require_logged_in, only: [:new, :create]
@@ -9,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user_profile = User.find(params[:id])
+    binding.pry
   end
 
   def new
@@ -28,9 +31,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+
+    if @user.id != Integer(params[:id]) #gotta convert the param to an integer to compare
+      redirect_to controller: 'users', action: 'index'
+    end
+
   end
 
   def update
+
+
+
   end
 
   def destroy
