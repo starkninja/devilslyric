@@ -1,21 +1,23 @@
-<% if @user_profile.avatar.present? %>
-  <%= image_tag @user.avatar.url(:large) %>
-<% else %>
-  <%= image_tag("man.png") %><br />
-<% end %>
-<%= @user_profile.username %> - <%= image_tag("coin-icon.png") %><%= @user_profile.balance.to_s %><br />
-<%= @user_profile.bio %>
+<div id="profile">
+  <% if @user_profile.avatar.present? %>
+    <%= image_tag(@user.avatar.url(:large), class: "avatar") %>
+  <% else %>
+    <%= image_tag("man.png", class: "avatar") %>
+  <% end %>
+  <%= @user_profile.username %>
+  <div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @user_profile.balance.to_s %></div>
+</div>
+
+<p class="copy"><%= @user_profile.bio %></p>
+<br />
 
 <% if @user == @user_profile %>
-
-  <% if @user.bio.nil? %>
-    <%= link_to "Add a few words about yourself", edit_user_url(@user) %>
-  <% else %>
-    <%= link_to "Edit", edit_user_url(@user) %>
-  <% end %>
-
+<center>
+  <%= link_to "Change your bio or avatar", edit_user_url(@user) %>
+  <br /><br />
   <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <%= button_tag "Log Out" %>
   <% end %>
-
 <% end %>
+
+</center>

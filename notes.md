@@ -79,3 +79,27 @@ arn:aws:iam::555626252092:user/admin
   <hr>
 
 <% end %>
+
+---
+
+<% if @user_profile.avatar.present? %>
+  <%= image_tag @user.avatar.url(:large) %>
+<% else %>
+  <%= image_tag("man.png") %><br />
+<% end %>
+<%= @user_profile.username %> - <%= image_tag("coin-icon.png") %><%= @user_profile.balance.to_s %><br />
+<%= @user_profile.bio %>
+
+<% if @user == @user_profile %>
+
+  <% if @user.bio.nil? %>
+    <%= link_to "Add a few words about yourself", edit_user_url(@user) %>
+  <% else %>
+    <%= link_to "Edit", edit_user_url(@user) %>
+  <% end %>
+
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <%= button_tag "Log Out" %>
+  <% end %>
+
+<% end %>
