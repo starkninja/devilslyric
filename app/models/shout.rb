@@ -1,6 +1,6 @@
 class Shout < ActiveRecord::Base
   belongs_to :user
-
+  belongs_to :author, foreign_key: "author_id", class_name: "User"
 
   validates :user_id, :author_id, presence: true
   validates :content, length: { minimum: 1 }, presence: true

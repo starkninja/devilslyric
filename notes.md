@@ -5,12 +5,11 @@
 Styling
 
   1.1 wishlist
-      truncate user bios on pages where it was requested
-      Password recovery? - https://www.railstutorial.org/book/password_reset
+
       Shoutbox/shouts on profile
-      Attack protection/sanitization
+
+      Password recovery? - https://www.railstutorial.org/book/password_reset
       Omnniauth for Facebook/google authentication
-      style flash errors
       Then, if time, add this with jQuery
       https://github.com/rsantamaria/papercrop
       https://stackoverflow.com/questions/21945531/jquery-jcrop-how-to-do-a-round-selection-is-it-even-possible - answer to making the selection circular
@@ -28,6 +27,9 @@ DONE
   Add ability to upload avatars
       http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
       https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
+    truncate user bios on pages where it was requested
+          Attack protection/sanitization
+              style flash errors
 
 ---
 

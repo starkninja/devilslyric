@@ -21,3 +21,43 @@
 <% end %>
 
 </center>
+
+<br /><br />
+<% if flash[:shout_error] %>
+    <div class="notice">
+      <%= image_tag("skull.png") %>
+      <div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
+      <%= flash[:shout_error] %>
+  </div>
+<% end %>
+<h4>Leave a message</h4>
+<%= form_for :shout, url: shouts_path, method: :post do |f| %>
+  <%= f.hidden_field(:user_id, value: @user_profile.id) %>
+  <%= f.hidden_field(:author_id, value: @user.id) %>
+  <%= f.text_area :content, class: "comment" %>
+  <br /><br />
+  <center><%= f.button "Send" %></center>
+<% end %>
+
+<br /><br />
+
+<h4>Shouts</h4><br />
+<% if @shouts %>
+  <% @shouts.each do |shout| %>
+    <div class="comment">
+      <%= image_tag("comment.png", class: "comment talk") %>
+      <% if shout.author.avatar.present? %>
+        <%= image_tag(shout.author.avatar.url(:large), class: "lil-avatar") %>
+      <% else %>
+        <%= image_tag("man.png", class: "lil-avatar") %>
+      <% end %>
+      <div class="full">
+        <div class="comment-head"><%= link_to shout.author.username, shout.author %></div>
+          "<%= shout.content %>"
+        </div>
+    </div>
+  <% end %>
+<% else %>
+  No shouts yet!
+<% end %>
+<br /><br />

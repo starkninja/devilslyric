@@ -1,8 +1,8 @@
-<% if flash[:error] %>
+<% if flash[:transaction_error] %>
     <div class="notice">
       <%= image_tag("skull.png") %>
       <div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
-      <%= flash[:error] %>
+      <%= flash[:transaction_error] %>
   </div>
 <% end %>
 
