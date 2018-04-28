@@ -5,9 +5,9 @@ Activity:
   <% @transactions.each do |transaction| %>
       <div class="activity">
         <% if transaction.user.avatar.present? %>
-          <%= image_tag(transaction.user.avatar.url(:large), class: "lil-avatar") %>
+          <%= link_to image_tag(transaction.user.avatar.url(:large), class: "lil-avatar"), transaction.user %>
         <% else %>
-          <%= image_tag("man.png", class: "lil-avatar") %>
+          <%= link_to image_tag("man.png", class: "lil-avatar"), transaction.user %>
         <% end %>
         <div class="full">
           <div class="activity-head"><%= link_to transaction.user.username, transaction.user %>&nbsp;►&nbsp;<%= link_to transaction.recipient.username, transaction.recipient %>&nbsp;&nbsp;<div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= transaction.amount %></div></div>

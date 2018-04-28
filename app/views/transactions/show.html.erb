@@ -2,16 +2,16 @@
 	<div class="transaction-head">
 
   <% if @transaction.user.avatar.present? %>
-    <div><%= image_tag(@transaction.user.avatar.url(:large), class: "med-avatar") %><%= link_to @transaction.user.username, @transaction.user %></div>
+    <div><%= link_to image_tag(@transaction.user.avatar.url(:large), class: "med-avatar"), @transaction.user %><%= link_to @transaction.user.username, @transaction.user %></div>
   <% else %>
-    <div> <%= image_tag("man.png", class: "med-avatar") %><%= link_to @transaction.user.username, @transaction.user %></div>
+    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.user %><%= link_to @transaction.user.username, @transaction.user %></div>
   <% end %>
       <div><br /><div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @transaction.amount.to_s %></div>&nbsp;<div class="big-arrow">►</div>&nbsp;</div>
 
   <% if @transaction.recipient.avatar.present? %>
-    <div><%= image_tag(@transaction.recipient.avatar.url(:large), class: "med-avatar") %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+    <div><%= link_to image_tag(@transaction.recipient.avatar.url(:large), class: "med-avatar"), @transaction.recipient %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
   <% else %>
-    <div> <%= image_tag("man.png", class: "med-avatar") %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+    <div> <%= link_to image_tag("man.png", class: "med-avatar"), @transaction.recipient %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
   <% end %>
 
   </div>
@@ -46,9 +46,9 @@
 <div class="comment">
   <%= image_tag("comment.png", class: "comment talk") %>
   <% if comment.user.avatar.present? %>
-    <%= image_tag(comment.user.avatar.url(:large), class: "lil-avatar") %>
+    <%= link_to image_tag(comment.user.avatar.url(:large), class: "lil-avatar"), comment.user %>
   <% else %>
-    <%= image_tag("man.png", class: "lil-avatar") %>
+    <%= link_to image_tag("man.png", class: "lil-avatar"), comment.user %>
   <% end %>
   <div class="full">
       <div class="comment-head"><%= link_to comment.user.username, comment.user %></div>
