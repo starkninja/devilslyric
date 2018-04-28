@@ -47,3 +47,35 @@ arn:aws:iam::555626252092:user/admin
             <% comment_count = transaction.comments.count.to_s + " comments." %>
             <%= link_to comment_count, transaction %> <br />
             <hr>
+
+----
+
+<%= @transaction.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("at %I:%M%p on %m/%d/%Y") %><br />
+<img src='<%= image_path(@transaction.user.avatar_link) %>'> <br />
+<%= @transaction.user.username %> paid <%= @transaction.recipient.username %> <%= @transaction.amount %> <br/ >
+"<%= @transaction.note %>"<br />
+
+<hr>
+
+<%= form_for :comment, url: comments_path, method: :post do |f| %>
+  <%= f.hidden_field(:transaction_id, value: @transaction.id) %>
+  <%= f.hidden_field(:user_id, value: @user.id) %>
+  <%= f.label :content, 'WRITE A COMMENT' %><br>
+  <%= f.text_field :content %><br>
+
+  <%= f.button "SEND" %>
+<% end %>
+
+<% if flash[:comment_error] %>
+    <div class="notice"><%= flash[:comment_error] %></div>
+<% end %>
+
+<hr>
+
+<% @comments.each do |comment| %>
+
+  "<%= comment.content %>"<br />
+  <%= image_tag(comment.user.avatar_link, class: "lil-avatar") %> - <%= comment.user.username %><br />
+  <hr>
+
+<% end %>

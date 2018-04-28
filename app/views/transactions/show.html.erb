@@ -1,29 +1,58 @@
-<%= @transaction.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("at %I:%M%p on %m/%d/%Y") %><br />
-<img src='<%= image_path(@transaction.user.avatar_link) %>'> <br />
-<%= @transaction.user.username %> paid <%= @transaction.recipient.username %> <%= @transaction.amount %> <br/ >
-"<%= @transaction.note %>"<br />
+<div class="transaction">
+	<div class="transaction-head">
 
-<hr>
+  <% if @transaction.user.avatar.present? %>
+    <div><%= image_tag(@transaction.user.avatar.url(:large), class: "med-avatar") %><%= link_to @transaction.user.username, @transaction.user %></div>
+  <% else %>
+    <div> <%= image_tag("man.png", class: "med-avatar") %><%= link_to @transaction.user.username, @transaction.user %></div>
+  <% end %>
+      <div><br /><div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @transaction.amount.to_s %></div>&nbsp;<div class="big-arrow">►</div>&nbsp;</div>
+
+  <% if @transaction.recipient.avatar.present? %>
+    <div><%= image_tag(@transaction.recipient.avatar.url(:large), class: "med-avatar") %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+  <% else %>
+    <div> <%= image_tag("man.png", class: "med-avatar") %><%= link_to @transaction.recipient.username, @transaction.recipient %></div>
+  <% end %>
+
+  </div>
+    <br />
+  <div class="fuckthisprojectentirely">
+    <%= image_tag("comment.png", class: "comment") %>&nbsp;<%= link_to @transaction.user.username, @transaction.user %>:&nbsp;"<%= @transaction.note %>"
+  </div>
+</div>
+
+<br /><br />
+
+<h4>Write a comment</h4>
 
 <%= form_for :comment, url: comments_path, method: :post do |f| %>
   <%= f.hidden_field(:transaction_id, value: @transaction.id) %>
   <%= f.hidden_field(:user_id, value: @user.id) %>
-  <%= f.label :content, 'WRITE A COMMENT' %><br>
-  <%= f.text_field :content %><br>
+  <%= f.text_field :content, class: "comment" %>
+  <br /><br />
 
-  <%= f.button "SEND" %>
+  <center><%= f.button "Send" %></center>
 <% end %>
 
 <% if flash[:comment_error] %>
     <div class="notice"><%= flash[:comment_error] %></div>
 <% end %>
+<br /><br />
 
-<hr>
+<h4>Comments</h4><br />
 
 <% @comments.each do |comment| %>
 
-  "<%= comment.content %>"<br />
-  <%= image_tag(comment.user.avatar_link, class: "lil-avatar") %> - <%= comment.user.username %><br />
-  <hr>
-
+<div class="comment">
+  <%= image_tag("comment.png", class: "comment talk") %>
+  <% if comment.user.avatar.present? %>
+    <%= image_tag(comment.user.avatar.url(:large), class: "lil-avatar") %>
+  <% else %>
+    <%= image_tag("man.png", class: "lil-avatar") %>
+  <% end %>
+  <div class="full">
+      <div class="comment-head"><%= link_to comment.user.username, comment.user %></div>
+        "<%= comment.content %>"
+  </div>
+</div>
 <% end %>
