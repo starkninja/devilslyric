@@ -1,4 +1,4 @@
-require 'pry'
+
 
 class TransactionsController < ApplicationController
   before_action :require_logged_in
@@ -30,7 +30,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     if !session[:recipient_id].nil? && !session[:recipient_id].empty? #if we get this far and we're still holding an id in session, lets drop it for cleanliness
       session.delete :recipient_id
     end
