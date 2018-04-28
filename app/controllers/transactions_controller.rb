@@ -23,6 +23,11 @@ class TransactionsController < ApplicationController
     redirect_to(controller: 'transactions', action: 'new')
   end
 
+  def show
+    @transaction = Transaction.find(params[:id])
+
+  end
+
   def create
     binding.pry
     if !session[:recipient_id].nil? && !session[:recipient_id].empty? #if we get this far and we're still holding an id in session, lets drop it for cleanliness

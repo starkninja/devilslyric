@@ -1,4 +1,5 @@
-<!-- TO DO: Sort in reverse chronological order, limit or paginate results -->
+<!-- TO DO: Limit or paginate results? -->
+<!--- Break this out to a partial -->
 Activity:
 <% if @transactions.length > 0 %>
   <% @transactions.each do |transaction| %>
@@ -7,8 +8,13 @@ Activity:
     <img src='<%= image_path(transaction.user.avatar_link) %>'> <br />
     <%= transaction.user.username %> paid <%= transaction.recipient.username %> <%= transaction.amount %> <br/ >
     "<%= transaction.note %>"<br />
+    <% comment_count = transaction.comments.count.to_s + " comments." %>
+    <%= link_to comment_count, transaction %> <br />
     <hr>
   <% end %>
 <% else %>
   <h3>No transactions yet!</h3>
 <% end %>
+
+
+link_to "Profile", @profile

@@ -1,8 +1,13 @@
 <h2>Send Bonecoin!</h2>
 
-<% @users.each do |receiver| %>
-  <%= form_tag(controller: "transactions", action: "prep", method: "post") do %>
-    <%= hidden_field_tag(:recipient_id, receiver.id) %>
-      <%= image_tag(receiver.avatar_link) %> <%= submit_tag(receiver.username) %>
+<!-- this form needs to be broken out to a partial -->
+<% if @users.length > 0 %>
+  <% @users.each do |receiver| %>
+    <%= form_tag(controller: "transactions", action: "prep", method: "post") do %>
+      <%= hidden_field_tag(:recipient_id, receiver.id) %>
+        <%= image_tag(receiver.avatar_link) %> <%= submit_tag(receiver.username) %>
+    <% end %>
   <% end %>
+<% else %>
+  No friends! That's no fun!
 <% end %>
