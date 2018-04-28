@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428065835) do
+ActiveRecord::Schema.define(version: 20180428083646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,13 +46,17 @@ ActiveRecord::Schema.define(version: 20180428065835) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.string   "avatar_link",     default: "man.png"
+    t.string   "avatar_link",         default: "man.png"
     t.integer  "balance"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.text     "bio"
-    t.integer  "unread",          default: 0
-    t.boolean  "has_been_paid",   default: false
+    t.integer  "unread",              default: 0
+    t.boolean  "has_been_paid",       default: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

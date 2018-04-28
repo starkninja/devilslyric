@@ -33,12 +33,6 @@ DONE
 
 ---
 
-<% if @users.length > 0 %>
-  <% @users.each do |user| %>
-    <%= link_to image_tag(user.avatar_link), new_transaction_url, :recipient_id => user.id %> <%= link_to user.username, new_transaction_url, :recipient_id => user.id %> <br />
-  <% end %>
-<% else %>
-  No friends! That's no fun!
-<% end %>
+<img src="<%= image_path(@user_profile.avatar_link) %>"><br />
 
-  <input type=button value='logout'>
+arn:aws:iam::555626252092:user/admin

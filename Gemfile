@@ -29,6 +29,8 @@ gem 'mime-types'
 gem 'bcrypt'
 gem 'puma', '~> 3.0'
 gem 'pry'
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk',   '~> 2.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

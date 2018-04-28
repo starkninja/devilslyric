@@ -38,7 +38,13 @@ class UsersController < ApplicationController
 
   def update
     user = @user
-    user.bio = user_params[:bio]
+    user.update(user_params)
+    # unless user_params[:bio].nil? || user_params[:bio].empty?
+    #   user.bio = user_params[:bio]
+    # end
+    # unless user_params[:avatar].nil? || user_params[:avatar].empty?
+    #
+    # end
     if user.save
       redirect_to controller: 'users', action: 'show', id: @user.id
     else
@@ -55,7 +61,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :bio)
+    params.require(:user).permit(:username, :password, :password_confirmation, :bio, :avatar)
   end
 
 

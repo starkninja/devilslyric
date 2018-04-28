@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :transactions
   has_many :shouts
+  has_attached_file :avatar, styles: { large: "300x300>", medium: "225x225>", small:"150x150" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   validates :username, uniqueness: true, length: { minimum: 1 }, presence: true
 
