@@ -2,15 +2,7 @@
 
 ----
 
-  Add ability to upload avatars
-    http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
-    https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
-
-    Then, if time, add this with jQuery
-    https://github.com/rsantamaria/papercrop
-    https://stackoverflow.com/questions/21945531/jquery-jcrop-how-to-do-a-round-selection-is-it-even-possible - answer to making the selection circular
-
-  Styling
+Styling
 
   1.1 wishlist
       truncate user bios on pages where it was requested
@@ -19,6 +11,9 @@
       Attack protection/sanitization
       Omnniauth for Facebook/google authentication
       style flash errors
+      Then, if time, add this with jQuery
+      https://github.com/rsantamaria/papercrop
+      https://stackoverflow.com/questions/21945531/jquery-jcrop-how-to-do-a-round-selection-is-it-even-possible - answer to making the selection circular
 
 
 
@@ -30,9 +25,25 @@ DONE
     Add friend picker for sending coins
   The entire comment controller and views need to be done still
     Profile page update - bio edit, show others' profiles
+  Add ability to upload avatars
+      http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
+      https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
 
 ---
 
 <img src="<%= image_path(@user_profile.avatar_link) %>"><br />
 
 arn:aws:iam::555626252092:user/admin
+<%= transaction.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("at %I:%M%p on %m/%d/%Y") %><br />
+      <img src='<%= image_path(transaction.user.avatar_link) %>'> <br />
+
+
+
+
+
+
+            <%= transaction.user.username %> paid <%= transaction.recipient.username %> <%= transaction.amount %> <br/ >
+
+            <% comment_count = transaction.comments.count.to_s + " comments." %>
+            <%= link_to comment_count, transaction %> <br />
+            <hr>

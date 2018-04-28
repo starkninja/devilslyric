@@ -1,16 +1,38 @@
+<div id="content">
+
+<!--landing page, no header included-->
+<%= image_tag("logo.png") %><br /><br />
+
+<p class="slogan">Bonecoin takes over when money fails™</p>
+
+<p class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit nulla ipsum. Mauris congue, enim et aliquam aliquet, odio ex fringilla lorem, et interdum felis tellus consectetur elit. Proin facilisis tellus id quam venenatis, at blandit ante placerat. Maecenas in vulputate libero. Pellentesque scelerisque dignissim purus vel hendrerit. Pellentesque sit amet tortor tellus.
+<br /><br />
+
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.button "create" %>
+<table class="center">
+<tr>
+<th class="form-title" colspan="2"><h5>Sign Up</h5></th>
+</tr>
+<tr>
+<td class="form-labels"><%= f.label :username %></td><td align="right"><%= f.text_field :username %></td>
+</tr>
+<tr>
+<td class="form-labels"><%= f.label :password %></td><td align="right"><%= f.password_field :password %></td>
+</tr>
+<tr>
+<td class="form-labels"><%= f.label :password_confirmation %></td><td align="right"><%= f.password_field :password_confirmation %></td>
+</tr>
+<tr>
+<td class="form-labels"></td><td align="right"><%= f.button "Sign Up" %> <br />
+  or <%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %></td>
+</tr>
+</table>
 <% end %>
-
+<br />
 <% if flash[:error] %>
     <div class="notice"><%= flash[:error] %></div>
 <% end %>
+<br />
+
+</div>
+</body>

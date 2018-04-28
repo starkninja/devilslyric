@@ -5,14 +5,17 @@ class UsersController < ApplicationController
   layout "application", except: [:new]
 
   def index
+    @section_title = "Friends"
     @users = User.all
   end
 
   def show
     @user_profile = User.find(params[:id])
+    @section_title = @user_profile.username + "'s Profile"
   end
 
   def new
+    @section_title = "Sign Up"
 
   end
 
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @section_title = "Edit Profile"
     if @user.id != Integer(params[:id]) #gotta convert the param to an integer to compare
       redirect_to controller: 'users', action: 'index'
     end

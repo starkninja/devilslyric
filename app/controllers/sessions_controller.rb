@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    @section_title = "Log In"
   end
 
   def create

@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
   before_action :require_logged_in
 
   def index
+    @section_title = "Activity"
     #eventually clear the logged-in user's notifications here
     @transactions = Transaction.all.order('created_at DESC')
     @user.unread = 0
@@ -11,10 +12,12 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @section_title = "Send Coin"
     @recipient = User.find(session[:recipient_id])
   end
 
   def pick_friend
+    @section_title = "Send Coin"
     @users = User.all
   end
 
