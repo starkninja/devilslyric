@@ -14,7 +14,9 @@
   <%= f.submit "SEND" %>
 <% end %>
 
-
+<% if flash[:comment_error] %>
+    <div class="notice"><%= flash[:comment_error] %></div>
+<% end %>
 
 <hr>
 

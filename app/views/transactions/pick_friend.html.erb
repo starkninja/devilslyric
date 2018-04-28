@@ -1,5 +1,7 @@
 <h2>Send Bonecoin!</h2>
-
+<% if flash[:transaction_error] %>
+    <div class="notice"><%= flash[:transaction_error] %></div>
+<% end %>
 <!-- this form needs to be broken out to a partial -->
 <% if @users.length > 0 %>
   <% @users.each do |receiver| %>

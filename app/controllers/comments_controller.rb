@@ -5,13 +5,14 @@ class CommentsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    binding.pry
+
     @comment = Comment.new(comment_params)
 
     if @comment.save
       redirect_to(controller: 'transactions', action: 'show', id: @comment.transaction_id)  # redirect_to the transaction in question
     elsif !comment_params[:transaction_id].nil? && !comment_params[:transaction_id].empty?
       flash[:comment_error] = "Something went wrong. Try again."
+      binding.pry
       redirect_to(controller: 'transactions', action: 'show', id: @comment.transaction_id) #if we've got the transaction_id we can go back there and throw an error
     else
       redirect_to(controller: 'transactions', action: 'index') #in case things are really messed up we'll just go home
