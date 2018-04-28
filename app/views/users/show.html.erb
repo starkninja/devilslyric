@@ -1,6 +1,6 @@
 <div id="profile">
   <% if @user_profile.avatar.present? %>
-    <%= image_tag(@user.avatar.url(:large), class: "avatar") %>
+    <%= image_tag(@user_profile.avatar.url(:large), class: "avatar") %>
   <% else %>
     <%= image_tag("man.png", class: "avatar") %>
   <% end %>

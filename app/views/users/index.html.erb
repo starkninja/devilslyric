@@ -1,3 +1,18 @@
-<% @users.each do |user| %> <!-- eventually break this out to a partial -->
-  <%= link_to image_tag(user.avatar_link), user %> <%= link_to user.username, user %> <br />
+<% @users.each do |user| %>
+  <div class="friend">
+  <% if user.avatar.present? %>
+    <%= link_to image_tag(user.avatar.url(:large), class: "lil-avatar"), user %>
+  <% else %>
+    <%= link_to image_tag("man.png", class: "lil-avatar"), user %>
+  <% end %>
+  <div class="full">
+    <div class="friend-head"><%= link_to user.username, user %>&nbsp;&nbsp;<div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= user.balance.to_s %></div></div>
+      <% if !user.bio.nil? && !user.bio.empty? %>
+        "<%= user.bio.truncate_words(5) %>..."
+      <% else %>
+        "..."
+      <% end %>
+    </div>
+  </div>
+<hr />
 <% end %>

@@ -103,3 +103,22 @@ arn:aws:iam::555626252092:user/admin
   <% end %>
 
 <% end %>
+
+---
+<h4> You can edit your bio here</h4>
+
+<%= form_for @user, controller: 'users', action: 'update' do |f| %>
+
+  <%= f.file_field :avatar %>
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+
+  <%= f.button "UPDATE" %>
+<% end %>
+
+----
+
+<% @users.each do |user| %> <!-- eventually break this out to a partial -->
+  <%= link_to image_tag(user.avatar_link), user %> <%= link_to user.username, user %> <br />
+<% end %>
