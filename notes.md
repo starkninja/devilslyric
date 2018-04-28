@@ -145,3 +145,17 @@ arn:aws:iam::555626252092:user/admin
 button do
   content_tag(:strong, 'Ask me!')
 end
+
+----
+<!-- break this out to a partial -->
+<%= form_for :transaction, url: transactions_path, method: :post do |f| %>
+  <%= f.hidden_field(:recipient_id, value: @recipient.id) %>
+  <%= f.hidden_field(:user_id, value: @user.id) %>
+  <%= f.label :amount %><br>
+  <%= f.number_field :amount, min: 0 %><br>
+  <br>
+  <%= f.label :note %><br>
+  <%= f.text_field :note %><br>
+
+  <%= f.button "Send Bonecoin!" %>
+<% end %>

@@ -15,7 +15,7 @@ body {
     font-size: 14pt;
 	line-height: 20pt;
 	font-family: 'Roboto', sans-serif;
-	letter-spacing: 1pt;	
+	letter-spacing: 1pt;
 	line-height: 32pt;
 }
 a {
@@ -27,7 +27,7 @@ a {
 hr {
 	height: 4px;
 	border: none;
-	background-color: #58585B;	
+	background-color: #58585B;
 	margin: 40px 0px;
 }
 
@@ -43,7 +43,7 @@ div#head img#logo {
 div#head {
 	width:100%;
 	background-color: #404041;
-	height: 229px;	
+	height: 229px;
 }
 div#status {
 	background-color: #F05A28;
@@ -52,11 +52,11 @@ div#status {
 	font-size: 36pt;
 	font-family: 'Oswald', sans-serif;
     letter-spacing: 2.5px;
-	text-transform: uppercase;	
-	display:flex;	
-	flex-direction: row;	
-	justify-content: space-between;			
-	align-items: center;		
+	text-transform: uppercase;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	height: 90px;
 }
 
@@ -64,16 +64,16 @@ div#status {
 
 div.coin-count {
 	display: inline-flex;
-	flex-direction: row;	
+	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
 	font-family: 'Oswald', sans-serif;
     letter-spacing: 2.5px;
-	text-transform: uppercase;			
+	text-transform: uppercase;
 }
 div.comment-count {
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
 	justify-content: flex-end;
 	align-items: flex-start;
 	margin-right: 40px;
@@ -137,7 +137,7 @@ div#menu {
 div#menu a {
 	color: #F1EBD5;
 	font-size: 22pt;
-	font-family: 'Oswald', sans-serif;		
+	font-family: 'Oswald', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
 	text-decoration: none;
@@ -155,7 +155,7 @@ div#menu div.page {
 	margin-bottom:10px;
 }
 #menu .current {
-    background-color: #BE1E2D;	
+    background-color: #BE1E2D;
 }
 div#alert {
 	display: inline-block;
@@ -199,26 +199,26 @@ button {
 	width: 300px;
 }
 input {
-	background-color: #A7A9AB;	
+	background-color: #A7A9AB;
 	font-size: 39pt;
 	color:#BE1E2D;
 	border: 3px #2D2D2D solid;
 	border-radius: 8px;
-	font-family: 'Oswald', sans-serif;	
+	font-family: 'Oswald', sans-serif;
 	padding: 10px 15px;
 	margin: 15px 0px;
 }
 textarea {
 	width: 100%;
 	height: 400px;
-	background-color: #A7A9AB;	
+	background-color: #A7A9AB;
 	font-size: 22pt;
 	font-family: inherit;
 	color:#BE1E2D;
 	border: 3px #2D2D2D solid;
 	border-radius: 8px;
 	padding: 10px 15px;
-	margin: 15px 0px;	
+	margin: 15px 0px;
 }
 textarea.comment {
 	height: 200px;
@@ -229,8 +229,8 @@ input:focus, textarea:focus {
 input.coins {
 	width: 200px;
 	height: 100px;
-	background-image: url("../images/coin.png");	
-    background-position: 10px 10px; 
+	background-image: url("../images/coin.png");
+    background-position: 10px 10px;
 	background-size: 75px;
     background-repeat: no-repeat;
     padding-left: 100px;
@@ -244,7 +244,7 @@ button.send-friend {
 	text-transform: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	box-shadow: none;		
+	box-shadow: none;
 	width: 100%;
 	padding: 0px;
 }
@@ -278,7 +278,7 @@ img.talk {
 /* -------------------------typographic styles------------------------- */
 
 .slogan {
-	font-family: 'Oswald', sans-serif;	
+	font-family: 'Oswald', sans-serif;
     font-size: 14pt;
 	text-transform:uppercase;
 	letter-spacing: 3px;
@@ -295,18 +295,18 @@ h5 {
 	font-weight: 500;
 	font-size: 38pt;
 	text-transform:uppercase;
-	letter-spacing: 4px;	
-	font-family: 'Oswald', sans-serif;		
+	letter-spacing: 4px;
+	font-family: 'Oswald', sans-serif;
 }
 h4 {
 	margin-bottom: 10px;
-	margin-top: 0px;	
+	margin-top: 0px;
 	padding: 10px 0px;
 	font-weight: 400;
 	font-size: 19pt;
 	text-transform:uppercase;
-	letter-spacing: 4px;	
-	font-family: 'Oswald', sans-serif;		
+	letter-spacing: 4px;
+	font-family: 'Oswald', sans-serif;
 }
 .fuckthisprojectentirely {
 	font-size: 16pt;
@@ -325,21 +325,21 @@ div.big-arrow a {
 div#content {
 	display: block;
 	padding: 40px;
-	width: 100%;	
+	width: 100%;
 }
 div#content.hasfoot {
 	margin-bottom: 200px;
 }
 #profile {
-	font-family: 'Oswald', sans-serif;	
-	display:flex;	
-	flex-direction: column;	
-	justify-content: space-around;			
-	align-items: center;		
+	font-family: 'Oswald', sans-serif;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 	font-size: 40pt;
 	line-height: 60pt;
 	font-weight: 500;
-	text-align:center;	
+	text-align:center;
 }
 table tr td th {
 	border: none;
@@ -359,26 +359,26 @@ th.form-title {
 
 div#user-edit-top {
 	display: flex;
-	flex-direction: row;	
-	justify-content: space-around;			
-	align-items: flex-end;			
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
 }
 div.activity, div.friend, div.comment {
 	display: flex;
-	flex-direction: row;	
-	justify-content: flex-start;			
-	align-items: flex-start;			
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
-div.activity, div.friend, div.comment, div.transaction {			
+div.activity, div.friend, div.comment, div.transaction {
 	font-size: 30pt;
 	line-height: 40pt;
 }
 div.activity-head, div.friend-head, div.comment-head {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
 	justify-content: flex-start;
-	align-items: center;			
+	align-items: center;
 }
 div.send-friend {
 	align-items: center;
@@ -396,17 +396,17 @@ div.send-friend div.friend-head {
 div.transaction-head {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;		
+	align-items: center;
 	text-align: center;
 }
 div.transaction-comment {
 	margin-bottom: 10px;
 	display: flex;
-	flex-direction: row;	
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;		
+	align-items: center;
 	text-align: center;
 }
 div.activity img.lil-avatar, div.friend img.lil-avatar, div.comment img.lil-avatar {
@@ -423,13 +423,13 @@ div.activity img.lil-avatar, div.friend img.lil-avatar, div.comment img.lil-avat
 	letter-spacing: auto;
 }
 body {
-	letter-spacing: .5pt;	
+	letter-spacing: .5pt;
 }
 div#content {
-	width: 70%;	
+	width: 70%;
 	max-width: 900px;
 	margin: 0 auto;
-}	
+}
 div#content.hasfoot {
 	margin-bottom: 0px;
 }
@@ -444,7 +444,7 @@ div.coin-count img {
 }
 div#head {
 	position: sticky;
-	top: 0px;	
+	top: 0px;
 	z-index: 100;
 	height: 120px;
 	width: 70%;
@@ -463,7 +463,7 @@ div#head img#logo {
 }
 div#menu {
 	height: 70px;
-	margin: 15px 0px;	
+	margin: 15px 0px;
 	width:auto;
 	position:relative;
 	padding: 0px;
@@ -475,7 +475,7 @@ div#menu {
 }
 div#menu a {
 	font-size: 8pt;
-	font-family: 'Oswald', sans-serif;		
+	font-family: 'Oswald', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 400;
@@ -492,13 +492,13 @@ div#menu div.page {
 	margin: 5px 20px;
 }
 #menu .current {
-    background-color: inherit;	
+    background-color: inherit;
 }
 #menu a {
 	color: #F05A28;
 }
 div.current a{
-	background-color: #BE1E2D;	
+	background-color: #BE1E2D;
 	border-radius: 5px;
 	padding: 2px 4px;
 }
@@ -576,7 +576,7 @@ hr {
 	margin: 15px 0px;
 }
 h4 {
-	font-size: 14pt;	
+	font-size: 14pt;
 	letter-spacing: 1.5pt;
 	margin-bottom: 0px;
 }
@@ -587,7 +587,7 @@ button {
 	padding: 10px 5px;
 	-webkit-box-shadow: 3px 3px 0px #BE1E2D;
 	-moz-box-shadow: 3px 3px 0px #BE1E2D;
-	box-shadow: 3px 3px 0px #BE1E2D;	
+	box-shadow: 3px 3px 0px #BE1E2D;
 }
 textarea {
 	width: 100%;
@@ -603,8 +603,8 @@ input {
 }
 input.coins {
 	width: 150px;
-	background-image: url("../images/coin.png");	
-    background-position: 10px 10px; 
+	background-image: url("../images/coin.png");
+    background-position: 10px 10px;
 	background-size: 40px;
     background-repeat: no-repeat;
     padding-left: 55px;
