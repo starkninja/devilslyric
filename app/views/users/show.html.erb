@@ -8,12 +8,12 @@
   <div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @user_profile.balance.to_s %></div>
 </div>
 
-<div class="text"><%= sanitize @user_profile.bio %></div>
+<center><div class="text"><%= sanitize @user_profile.bio %></div></center>
 <br />
 
 <% if @user == @user_profile %>
 <center>
-  <%= link_to "Change your bio or avatar", edit_user_url(@user) %>
+    <%= link_to "Edit", edit_user_url(@user), class: "fakebutton" %>
   <br /><br />
   <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <%= button_tag "Log Out" %>

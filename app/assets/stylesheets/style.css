@@ -136,7 +136,7 @@ div#menu {
 div#menu a {
 	color: #F1EBD5;
 	font-size: 22pt;
-	line-height: 21pt;
+	line-height: 16pt;
 	font-family: 'Oswald', sans-serif;		
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
@@ -165,7 +165,7 @@ div.alert {
 	z-index: 100;
 	width: 80px;
 	height: 80px;
-	background-color: #FF3600;
+	background-color:#FF0004;
 	font-size: 24pt;
 	font-weight:bold;
 	border-radius: 40px;
@@ -198,6 +198,26 @@ button {
 	text-decoration: none;
 	width: 300px;
 }
+a.fakebutton {
+	border: none;
+	-webkit-border-radius: 9;
+	-moz-border-radius: 9;
+	border-radius: 9px;
+	-webkit-box-shadow: 4px 4px 0px #BE1E2D;
+	-moz-box-shadow: 4px 4px 0px #BE1E2D;
+	box-shadow: 4px 4px 0px #BE1E2D;
+	background: #F05A28;
+	padding: 25px 20px 25px 20px;
+	width: 300px;
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+    letter-spacing: 2.5px;	
+	color: #F1EBD5;
+	font-size: 38pt;	
+	text-decoration: none;
+	font-weight: inherit;
+}
 input {
 	background-color: #A7A9AB;	
 	font-size: 39pt;
@@ -229,12 +249,12 @@ input:focus, textarea:focus {
 input.coins {
 	width: 200px;
 	height: 100px;
-	background: url("../images/coin.png");
 	background-color: #A7A9AB; 
-    background-position: 10px 10px; 
-	background-size: 75px;
-    background-repeat: no-repeat;
-    padding-left: 100px;
+}
+div.send-amount {
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 button.send-friend {
 	background: none;
@@ -266,6 +286,7 @@ button.send-friend {
 }
 .avatar, .lil-avatar, .med-avatar {
 	border-radius: 150px;
+	border
 }
 img.comment {
 	width: 60px;
@@ -291,8 +312,10 @@ img.talk {
 	margin: 35px;
 }
 .text {
-	margin: 35px;
-	margin-bottom: 10px;
+	text-align:  left;
+	display: inline-block;
+	padding: 35px;
+	padding-bottom: 10px;
 	font-size: 30pt;
 	line-height: 34pt;
 }
@@ -536,7 +559,7 @@ div.alert {
 	left: -20px;
 	width: 30px;
 	height: 30px;
-	background-color: #FF3600;
+	background-color:#FF0004;
 	font-size: 9pt;
 	font-weight:bold;
 	border-radius: 15px;
@@ -615,7 +638,7 @@ input {
 }
 input.coins {
 	width: 150px;
-
+	background: url("../images/coin.png");
     background-position: 10px 10px; 
 	background-size: 40px;
     background-repeat: no-repeat;

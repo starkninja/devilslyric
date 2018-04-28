@@ -13,8 +13,9 @@
 <%= form_for :transaction, url: transactions_path, method: :post do |f| %>
   <%= f.hidden_field(:recipient_id, value: @recipient.id) %>
   <%= f.hidden_field(:user_id, value: @user.id) %>
-
-  <%= f.number_field :amount, min: 1, class: "coins" %><br>
+  <div class="send-amount">
+  <%= image_tag("coin.png", class: "send-amount") %>&nbsp;&nbsp;&nbsp;<%= f.number_field :amount, min: 1, class: "coins" %><br>
+</div>
   <br />
   <br />
 
