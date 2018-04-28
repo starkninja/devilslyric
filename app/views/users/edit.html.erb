@@ -1,20 +1,16 @@
 <div id="user-edit-top">
-<%= form_for @user, controller: 'users', action: 'update' do |f| %>
   <% if @user.avatar.present? %>
     <%= image_tag(@user.avatar.url(:large), class: "avatar") %>
   <% else %>
     <%= image_tag("man.png", class: "avatar") %>
   <% end %>
-  <div>
-      <br /><br />
-        <h4><%= f.label :avatar, 'Change Pic' %></h4>
-        <%= f.file_field :avatar %>
-  </div>
 </div>
 <br /><br />
-
+<br /><br />
+<%= form_for @user, controller: 'users', action: 'update' do |f| %>
+<h4><%= f.label :avatar, 'Change Pic' %></h4>
+<%= f.file_field :avatar %>
 <h4>Biography</h4>
 <%= f.text_area :bio %>
-<br /><br />
 <center><%= f.button "Save" %></center>
 <% end %>
