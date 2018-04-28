@@ -10,7 +10,7 @@
               <% if @user.unread > 0 %>
                 <% if current_page?(transactions_path) || current_page?(root_path) %>
                   <div class="current page">
-                    <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
+                    <div class="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
                     <div class="alert-on">
                       <%= link_to image_tag("activity-on.png"), transactions_path %><br />
                         <%= link_to "Activity", transactions_url %>
@@ -18,7 +18,7 @@
                   </div>
                 <% else %>
                   <div class="page">
-                    <div id="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
+                    <div class="alert"><%= link_to @user.unread.to_s, transactions_path %></div>
                     <div class="alert-on">
                       <%= link_to image_tag("activity-off.png"), transactions_path %><br />
                         <%= link_to "Activity", transactions_url %>
@@ -45,7 +45,7 @@
             <% if @user.unread_shouts > 0 %>
               <% if current_page?(user_path(@user)) %>
                 <div class="current page">
-                  <div id="alert"><%= link_to @user.unread_shouts.to_s, user_path(@user) %></div>
+                  <div class="alert"><%= link_to @user.unread_shouts.to_s, user_path(@user) %></div>
                   <div class="alert-on">
                     <%= link_to image_tag("profile-on.png"), user_path(@user) %><br />
                     <%= link_to "Profile", user_path(@user) %>
@@ -53,7 +53,7 @@
                 </div>
               <% else %>
                 <div class="page">
-                  <div id="alert"><%= link_to @user.unread_shouts.to_s, user_path(@user) %></div>
+                  <div class="alert"><%= link_to @user.unread_shouts.to_s, user_path(@user) %></div>
                   <div class="alert-on">
                   <%= link_to image_tag("profile-off.png"), user_path(@user) %><br />
                   <%= link_to "Profile", user_path(@user) %>
