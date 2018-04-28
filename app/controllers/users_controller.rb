@@ -1,5 +1,3 @@
-require 'pry'
-
 class UsersController < ApplicationController
   before_action :require_logged_in
   skip_before_action :require_logged_in, only: [:new, :create]
@@ -11,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user_profile = User.find(params[:id])
-    binding.pry
   end
 
   def new
