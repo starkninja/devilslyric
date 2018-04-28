@@ -4,7 +4,7 @@
 
 <% if @user == @user_profile %>
 
-  <% if @user.bio.length < 1 %>
+  <% if @user.bio.nil? %>
     <%= link_to "Add a few words about yourself", edit_user_url(@user) %>
   <% else %>
     <%= link_to "Edit", edit_user_url(@user) %>
