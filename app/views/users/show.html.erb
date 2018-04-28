@@ -1,7 +1,7 @@
 <% if @user_profile.avatar.present? %>
   <%= image_tag @user.avatar.url(:large) %>
 <% else %>
-  <img src="<%= image_tag("man.png") %>"><br />
+  <%= image_tag("man.png") %><br />
 <% end %>
 <%= @user_profile.username %> - <%= image_tag("coin-icon.png") %><%= @user_profile.balance.to_s %><br />
 <%= @user_profile.bio %>
