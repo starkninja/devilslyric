@@ -2,8 +2,6 @@
 
 ----
 
-  The entire comment controller and views need to be done still
-
   Profile page update - bio edit, show others' profiles
 
   Add ability to upload avatars
@@ -17,6 +15,7 @@
   Styling
 
   1.1 wishlist
+      truncate user bios on pages where it was requested
       Password recovery? - https://www.railstutorial.org/book/password_reset
       Shoutbox/shouts on profile
       Attack protection/sanitization
@@ -31,7 +30,7 @@ DONE
   Add user accounts/authentication/sign-in once finished with Flatiron labs
     notifications
     Add friend picker for sending coins
-
+  The entire comment controller and views need to be done still
 
 ---
 
@@ -42,3 +41,5 @@ DONE
 <% else %>
   No friends! That's no fun!
 <% end %>
+
+  <input type=button value='logout'>
