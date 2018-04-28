@@ -37,16 +37,22 @@ class TransactionsController < ApplicationController
     #NEED CHECK IF BALANCE TOO LOW
     @transaction = Transaction.new(transaction_params)
 
-    if @transaction.save
+    # if @transaction.save
       #DRY up this logic
       #it should either be moved to the model or at least its own method. doesn't belong in controller
       #maybe something like @transaction.pay
-      @transaction.pay
+
+    if @transaction.pay
       redirect_to(controller: 'transactions', action: 'index')  # redirect_to 'index'
     else
       flash[:transaction_error] = "Something went wrong. Try again."
       redirect_to(controller: 'transactions', action: 'pick_friend')
     end
+
+    # else
+    #   flash[:transaction_error] = "Something went wrong. Try again."
+    #   redirect_to(controller: 'transactions', action: 'pick_friend')
+    # end
   end
 
   private

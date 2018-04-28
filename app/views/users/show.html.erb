@@ -1,5 +1,5 @@
 <img src="<%= image_path(@user_profile.avatar_link) %>"><br />
-<%= @user_profile.username %> <br />
+<%= @user_profile.username %> - <%= image_tag("coin-icon.png") %><%= @user_profile.balance.to_s %><br />
 <%= @user_profile.bio %>
 
 <% if @user == @user_profile %>
