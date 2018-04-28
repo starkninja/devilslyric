@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
   before_action :require_logged_in
   skip_before_action :require_logged_in, only: [:new, :create]
@@ -36,7 +37,14 @@ class UsersController < ApplicationController
   end
 
   def update
-
+    user = @user
+    user.bio = user_params[:bio]
+    if user.save
+      redirect_to controller: 'users', action: 'show', id: @user.id
+    else
+      flash[:error] = "Something went wrong. Please try again."
+      redirect_to controller: 'users', action: 'show', id: @user.id
+    end
 
 
   end
