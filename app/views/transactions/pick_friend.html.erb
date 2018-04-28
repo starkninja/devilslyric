@@ -5,6 +5,13 @@
   </div>
 <% end %>
 
+<% if flash[:transaction_error] %>
+    <div class="notice">
+      <%= image_tag("skull.png", class: "notice") %>
+      <div><h4>Error</h4><%= flash[:infinite_money] %></div>
+  </div>
+<% end %>
+
 <h4>Select Recipient</h4>
 <br />
 <% if @users.length > 0 %>

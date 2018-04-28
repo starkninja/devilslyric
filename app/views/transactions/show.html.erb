@@ -28,7 +28,7 @@
 <%= form_for :comment, url: comments_path, method: :post do |f| %>
   <%= f.hidden_field(:transaction_id, value: @transaction.id) %>
   <%= f.hidden_field(:user_id, value: @user.id) %>
-  <%= f.text_field :content, class: "comment" %>
+  <%= f.text_area :content, class: "comment" %>
   <br /><br />
 
   <center><%= f.button "Send" %></center>

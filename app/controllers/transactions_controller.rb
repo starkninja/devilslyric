@@ -19,6 +19,8 @@ class TransactionsController < ApplicationController
   def pick_friend
     @section_title = "Send Coin"
     @users = User.all
+    @users = @users.to_a #change this to an array in memory to avoid any effect on the db
+    @users.delete(@user) #remove the logged-in user from the list of people to send to
   end
 
   def prep
@@ -45,6 +47,11 @@ class TransactionsController < ApplicationController
       #DRY up this logic
       #it should either be moved to the model or at least its own method. doesn't belong in controller
       #maybe something like @transaction.pay
+
+    if @transaction.user_id == @transaction.recipient_id
+      flash[:infinite_money] = "Sending money to yourself? Nice try, dick."
+      redirect_to(controller: 'transactions', action: 'pick_friend')
+    end
 
     if @transaction.pay
       redirect_to(controller: 'transactions', action: 'index')  # redirect_to 'index'

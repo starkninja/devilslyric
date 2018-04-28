@@ -103,6 +103,11 @@ div.notice img.notice {
 	margin: 10px 40px 10px 10px;
 }
 
+input.file {
+	width: 100%;
+	font-family: inherit;
+}
+
 /* -------------------------to modify other styles------------------------- */
 
 .full {

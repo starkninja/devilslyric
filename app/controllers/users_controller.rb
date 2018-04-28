@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def index
     @section_title = "Friends"
     @users = User.all
+    @users = @users.to_a #change this to an array in memory to avoid any effect on the db
+    @users.delete(@user) #remove the logged-in user from the list of people to send to
   end
 
   def show

@@ -9,7 +9,7 @@
 <br /><br />
 <%= form_for @user, controller: 'users', action: 'update' do |f| %>
 <h4><%= f.label :avatar, 'Change Pic' %></h4>
-<%= f.file_field :avatar %>
+<%= f.file_field :avatar, class: 'file' %>
 <h4>Biography</h4>
 <%= f.text_area :bio %>
 <center><%= f.button "Save" %></center>
