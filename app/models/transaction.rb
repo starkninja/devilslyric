@@ -1,7 +1,7 @@
 class Transaction < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  validates :amount, :numericality => { :greater_than_or_equal_to => 1 } #can't send a payment for less than 1 - would schema have been a better place?
+  validates :amount, presence: true, :numericality => { :greater_than_or_equal_to => 1 } #can't send a payment for less than 1 - would schema have been a better place?
 
   #after_create :send_notification
 

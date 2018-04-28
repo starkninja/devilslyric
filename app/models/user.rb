@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :transactions
   has_many :shouts
 
+  validates :username, uniqueness: true, length: { minimum: 1 }, presence: true
+
   after_initialize :set_defaults, unless: :persisted?   # The set_defaults will only work if the object is new
   after_create :create_initial_transaction
 
