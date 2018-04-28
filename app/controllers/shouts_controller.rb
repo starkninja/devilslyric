@@ -5,6 +5,8 @@ class ShoutsController < ApplicationController
     @shout = Shout.new(shout_params)
 
     if @shout.save
+      @user = User.find(shout_params[:user_id])
+      @user.unread_shouts.increment!
       redirect_to(controller: 'users', action: 'show', id: shout_params[:user_id])
     else
       flash[:shout_error] = "Something went wrong. Try again."

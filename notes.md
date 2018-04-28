@@ -6,8 +6,6 @@ Styling
 
   1.1 wishlist
 
-      Shoutbox/shouts on profile
-
       Password recovery? - https://www.railstutorial.org/book/password_reset
       Omnniauth for Facebook/google authentication
       Then, if time, add this with jQuery
@@ -30,7 +28,8 @@ DONE
     truncate user bios on pages where it was requested
           Attack protection/sanitization
               style flash errors
-
+  Shoutbox/shouts on profile
+  
 ---
 
 <img src="<%= image_path(@user_profile.avatar_link) %>"><br />
