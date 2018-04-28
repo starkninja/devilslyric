@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   def show
     @user_profile = User.find(params[:id])
     @section_title = @user_profile.username + "'s Profile"
+
     if @user_profile.shouts.count > 0
       @shouts = @user_profile.shouts
     end
+
     if @user == @user_profile
       @user.unread_shouts = 0
       @user.save
