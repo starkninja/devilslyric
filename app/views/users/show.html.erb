@@ -8,7 +8,7 @@
   <div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= @user_profile.balance.to_s %></div>
 </div>
 
-<p class="copy"><%= @user_profile.bio %></p>
+<p class="copy"><%= sanitize @user_profile.bio %></p>
 <br />
 
 <% if @user == @user_profile %>
@@ -53,7 +53,7 @@
       <% end %>
       <div class="full">
         <div class="comment-head"><%= link_to shout.author.username, shout.author %></div>
-          "<%= shout.content %>"
+          "<%= sanitize shout.content %>"
         </div>
     </div>
   <% end %>

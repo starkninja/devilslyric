@@ -11,7 +11,7 @@ Activity:
         <% end %>
         <div class="full">
           <div class="activity-head"><%= link_to transaction.user.username, transaction.user %>&nbsp;►&nbsp;<%= link_to transaction.recipient.username, transaction.recipient %>&nbsp;&nbsp;<div class="coin-count"><%= image_tag("coin-icon.png") %>&nbsp;<%= transaction.amount %></div></div>
-            "<%= transaction.note %>"<br />
+            "<%= sanitize transaction.note %>"<br />
             <div class="comment-count"><%= link_to transaction.comments.count.to_s, transaction %>&nbsp;<%= link_to image_tag("comment.png", class: "comment"), transaction %></div>
           </div>
         </div>

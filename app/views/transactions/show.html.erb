@@ -17,7 +17,7 @@
   </div>
     <br />
   <div class="fuckthisprojectentirely">
-    <%= image_tag("comment.png", class: "comment") %>&nbsp;<%= link_to @transaction.user.username, @transaction.user %>:&nbsp;"<%= @transaction.note %>"
+    <%= image_tag("comment.png", class: "comment") %>&nbsp;<%= link_to @transaction.user.username, @transaction.user %>:&nbsp;"<%= sanitize @transaction.note %>"
   </div>
 </div>
 
@@ -52,7 +52,7 @@
   <% end %>
   <div class="full">
       <div class="comment-head"><%= link_to comment.user.username, comment.user %></div>
-        "<%= comment.content %>"
+        "<%= sanitize comment.content %>"
   </div>
 </div>
 <% end %>
