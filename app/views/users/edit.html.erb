@@ -1,0 +1,9 @@
+<h4> You can edit your bio here</h4>
+
+<%= form_for @user, controller: 'users', action: 'update' do |f| %>
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+
+  <%= f.button "UPDATE" %>
+<% end %>
