@@ -1,13 +1,30 @@
-<h2>Send Bonecoin!</h2>
-<% if flash[:transaction_error] %>
-    <div class="notice"><%= flash[:transaction_error] %></div>
+<% if flash[:error] %>
+    <div class="notice">
+      <%= image_tag("skull.png") %>
+      <div><h4>Error</h4>Something went wrong. I can almost guarantee it was your fault.</div>
+      <%= flash[:error] %>
+  </div>
 <% end %>
-<!-- this form needs to be broken out to a partial -->
+
+<h4>Select Recipient</h4>
+<br />
 <% if @users.length > 0 %>
   <% @users.each do |receiver| %>
     <%= form_tag(controller: "transactions", action: "prep", method: "post") do %>
       <%= hidden_field_tag(:recipient_id, receiver.id) %>
-        <%= image_tag(receiver.avatar_link) %> <%= submit_tag(receiver.username) %>
+      <button type="submit" class="send-friend">
+      <div class="friend send-friend">
+        <% if receiver.avatar.present? %>
+          <%= image_tag(receiver.avatar.url(:large), class: "lil-avatar") %>
+        <% else %>
+          <%= image_tag("man.png", class: "lil-avatar") %>
+        <% end %>
+        <div class="full">
+          <div class="friend-head"><%= receiver.username %><div class="big-arrow"><a>►</a></div></div>
+        </div>
+      </div>
+      </button>
+      <hr />
     <% end %>
   <% end %>
 <% else %>

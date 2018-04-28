@@ -122,3 +122,26 @@ arn:aws:iam::555626252092:user/admin
 <% @users.each do |user| %> <!-- eventually break this out to a partial -->
   <%= link_to image_tag(user.avatar_link), user %> <%= link_to user.username, user %> <br />
 <% end %>
+
+----
+
+<h2>Send Bonecoin!</h2>
+<% if flash[:transaction_error] %>
+    <div class="notice"><%= flash[:transaction_error] %></div>
+<% end %>
+<!-- this form needs to be broken out to a partial -->
+<% if @users.length > 0 %>
+  <% @users.each do |receiver| %>
+    <%= form_tag(controller: "transactions", action: "prep", method: "post") do %>
+      <%= hidden_field_tag(:recipient_id, receiver.id) %>
+        <%= image_tag(receiver.avatar_link) %> <%= submit_tag(receiver.username) %>
+    <% end %>
+  <% end %>
+<% else %>
+  No friends! That's no fun!
+<% end %>
+
+
+button do
+  content_tag(:strong, 'Ask me!')
+end
