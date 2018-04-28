@@ -2,8 +2,6 @@
 
 ----
 
-  Profile page update - bio edit, show others' profiles
-
   Add ability to upload avatars
     http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
     https://gist.github.com/belgoros/b289a0b57b52d16b99d436ca9b80417f <-- deploying paperclip app to heroku
@@ -31,6 +29,7 @@ DONE
     notifications
     Add friend picker for sending coins
   The entire comment controller and views need to be done still
+    Profile page update - bio edit, show others' profiles
 
 ---
 
