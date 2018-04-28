@@ -1,3 +1,5 @@
+require 'pry'
+
 class TransactionsController < ApplicationController
   before_action :require_logged_in
 
@@ -9,30 +11,35 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @recipient = User.find(params[:recipient_id])
+    @recipient = User.find(session[:recipient_id])
   end
 
   def pick_friend
     @users = User.all
   end
 
+  def prep
+    session[:recipient_id] = params[:recipient_id]
+    redirect_to(controller: 'transactions', action: 'new')
+  end
+
   def create
+    binding.pry
+    if !session[:recipient_id].nil? && !session[:recipient_id].empty? #if we get this far and we're still holding an id in session, lets drop it for cleanliness
+      session.delete :recipient_id
+    end
     #NEED CHECK IF BALANCE TOO LOW
     @transaction = Transaction.new(transaction_params)
 
-    respond_to do |format|
-      if @transaction.save
-        #DRY up this logic
-        #it should either be moved to the model or at least its own method. doesn't belong in controller
-        #maybe something like @transaction.pay
-        @transaction.pay
-        format.html { redirect_to(transactions_url) }
-        format.json { render action: 'index', status: :created }
-        # redirect_to 'index'
-      else
-        format.html { render action: 'new'}
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
-      end
+    if @transaction.save
+      #DRY up this logic
+      #it should either be moved to the model or at least its own method. doesn't belong in controller
+      #maybe something like @transaction.pay
+      @transaction.pay
+      redirect_to(controller: 'transactions', action: 'index')  # redirect_to 'index'
+    else
+      flash[:transaction_error] = "Something went wrong. Try again."
+      redirect_to(controller: 'transactions', action: 'pick_friend')
     end
   end
 

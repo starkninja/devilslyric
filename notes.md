@@ -10,7 +10,7 @@
 
   Styling
 
-  notifications
+
 
   Add ability to upload avatars
     http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
@@ -33,3 +33,15 @@ DONE
 ----
   Active navbar icons - https://gist.github.com/mynameispj/5692162
   Add user accounts/authentication/sign-in once finished with Flatiron labs
+    notifications
+
+
+---
+
+<% if @users.length > 0 %>
+  <% @users.each do |user| %>
+    <%= link_to image_tag(user.avatar_link), new_transaction_url, :recipient_id => user.id %> <%= link_to user.username, new_transaction_url, :recipient_id => user.id %> <br />
+  <% end %>
+<% else %>
+  No friends! That's no fun!
+<% end %>
