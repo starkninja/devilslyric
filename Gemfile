@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mime-types'
 gem 'bcrypt'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 gem 'pry'
 gem 'paperclip', '~> 5.1.0'
 gem 'aws-sdk',   '~> 2.6'
